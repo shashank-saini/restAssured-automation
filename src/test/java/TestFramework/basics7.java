@@ -22,7 +22,7 @@ public class basics7 {
 	public void getData() throws IOException
 	{
 		
-		FileInputStream fis=new FileInputStream("C:\\Users\\shashank.saini\\Desktop\\Interview\\RESTAssuredTest\\RESTAssuredTest\\src\\main\\java\\TestFramework\\env.properties");
+		FileInputStream fis=new FileInputStream("/var/jenkins_home/workspace/erestAssured-automation/Project/src/main/java/TestFramework/env.properties");
 		prop.load(fis);
 		
 		//prop.get("HOST");
@@ -67,29 +67,29 @@ public class basics7 {
 }
 	
 	@Test
-	public void AddBooks()
-	{
-		//Creating Issue/Defect
+// 	public void AddBooks()
+// 	{
+// 		//Creating Issue/Defect
 		
-		RestAssured.baseURI= "http://216.10.245.166";
-		HashMap<String, Object>  jsonAsMap = new HashMap<>();
-		jsonAsMap.put("name", "John");
-		jsonAsMap.put("isbn", "bcsremlkrzd");
-		jsonAsMap.put("aisle", "808");
-		jsonAsMap.put("author", "rakul");
-		Response res=given().
-				header("Content-Type", "application/json").
-				body(jsonAsMap).
+// 		RestAssured.baseURI= "http://216.10.245.166";
+// 		HashMap<String, Object>  jsonAsMap = new HashMap<>();
+// 		jsonAsMap.put("name", "John");
+// 		jsonAsMap.put("isbn", "bcsremlkrzd");
+// 		jsonAsMap.put("aisle", "808");
+// 		jsonAsMap.put("author", "rakul");
+// 		Response res=given().
+// 				header("Content-Type", "application/json").
+// 				body(jsonAsMap).
 				
-		when().
-		post("/Library/Addbook.php").then().statusCode(200).extract().response();
-		System.out.println(res);
-		   JsonPath js= ReusableMethods.rawToJson(res);
-		   String id=js.get("ID");
-		   System.out.println(id);
+// 		when().
+// 		post("/Library/Addbook.php").then().statusCode(200).extract().response();
+// 		System.out.println(res);
+// 		   JsonPath js= ReusableMethods.rawToJson(res);
+// 		   String id=js.get("ID");
+// 		   System.out.println(id);
 		   
 		   
 		
-}
+// }
 	
 }
